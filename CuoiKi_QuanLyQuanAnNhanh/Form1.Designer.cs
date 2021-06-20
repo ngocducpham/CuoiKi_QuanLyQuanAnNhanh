@@ -103,8 +103,12 @@ namespace CuoiKi_QuanLyQuanAnNhanh
             this.label17 = new System.Windows.Forms.Label();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
+            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.textBox12 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -112,10 +116,6 @@ namespace CuoiKi_QuanLyQuanAnNhanh
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.label8 = new System.Windows.Forms.Label();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.label27 = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.label28 = new System.Windows.Forms.Label();
-            this.textBox13 = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -144,6 +144,7 @@ namespace CuoiKi_QuanLyQuanAnNhanh
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1242, 633);
+            this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -290,6 +291,7 @@ namespace CuoiKi_QuanLyQuanAnNhanh
             // 
             // flpnFood
             // 
+            this.flpnFood.AutoScroll = true;
             this.flpnFood.BackColor = System.Drawing.Color.White;
             this.flpnFood.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.flpnFood.Location = new System.Drawing.Point(6, 9);
@@ -306,7 +308,7 @@ namespace CuoiKi_QuanLyQuanAnNhanh
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1234, 639);
+            this.tabPage2.Size = new System.Drawing.Size(1234, 604);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "SƠ ĐỒ";
             // 
@@ -418,6 +420,7 @@ namespace CuoiKi_QuanLyQuanAnNhanh
             // 
             // flpnTable
             // 
+            this.flpnTable.AutoScroll = true;
             this.flpnTable.BackColor = System.Drawing.Color.White;
             this.flpnTable.Location = new System.Drawing.Point(6, 6);
             this.flpnTable.Name = "flpnTable";
@@ -432,7 +435,7 @@ namespace CuoiKi_QuanLyQuanAnNhanh
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1234, 639);
+            this.tabPage3.Size = new System.Drawing.Size(1234, 604);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Mon An";
             // 
@@ -615,6 +618,7 @@ namespace CuoiKi_QuanLyQuanAnNhanh
             // 
             // flpnMonAn
             // 
+            this.flpnMonAn.AutoScroll = true;
             this.flpnMonAn.BackColor = System.Drawing.Color.White;
             this.flpnMonAn.Location = new System.Drawing.Point(6, 6);
             this.flpnMonAn.Name = "flpnMonAn";
@@ -853,12 +857,35 @@ namespace CuoiKi_QuanLyQuanAnNhanh
             this.label16.TabIndex = 0;
             this.label16.Text = "Ten Tai Khoan";
             // 
+            // textBox13
+            // 
+            this.textBox13.Location = new System.Drawing.Point(133, 422);
+            this.textBox13.Name = "textBox13";
+            this.textBox13.Size = new System.Drawing.Size(232, 23);
+            this.textBox13.TabIndex = 1;
+            // 
+            // textBox12
+            // 
+            this.textBox12.Location = new System.Drawing.Point(133, 49);
+            this.textBox12.Name = "textBox12";
+            this.textBox12.Size = new System.Drawing.Size(232, 23);
+            this.textBox12.TabIndex = 1;
+            // 
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(131, 88);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(232, 23);
             this.textBox3.TabIndex = 1;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(19, 422);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(90, 17);
+            this.label28.TabIndex = 0;
+            this.label28.Text = "Ma Nhan Vien";
             // 
             // label20
             // 
@@ -868,6 +895,15 @@ namespace CuoiKi_QuanLyQuanAnNhanh
             this.label20.Size = new System.Drawing.Size(133, 17);
             this.label20.TabIndex = 0;
             this.label20.Text = "Tai Khoan Nhan Vien";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(19, 52);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(90, 17);
+            this.label27.TabIndex = 0;
+            this.label27.Text = "Ma Nhan Vien";
             // 
             // label18
             // 
@@ -930,42 +966,10 @@ namespace CuoiKi_QuanLyQuanAnNhanh
             this.tabPage5.Location = new System.Drawing.Point(4, 25);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(1234, 639);
+            this.tabPage5.Size = new System.Drawing.Size(1234, 604);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Thong Ke";
             this.tabPage5.UseVisualStyleBackColor = true;
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(19, 52);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(90, 17);
-            this.label27.TabIndex = 0;
-            this.label27.Text = "Ma Nhan Vien";
-            // 
-            // textBox12
-            // 
-            this.textBox12.Location = new System.Drawing.Point(133, 49);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(232, 23);
-            this.textBox12.TabIndex = 1;
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(19, 422);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(90, 17);
-            this.label28.TabIndex = 0;
-            this.label28.Text = "Ma Nhan Vien";
-            // 
-            // textBox13
-            // 
-            this.textBox13.Location = new System.Drawing.Point(133, 422);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(232, 23);
-            this.textBox13.TabIndex = 1;
             // 
             // frmMain
             // 
