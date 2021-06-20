@@ -50,10 +50,10 @@ namespace CuoiKi_QuanLyQuanAnNhanh.Control
             this.lbFoodName.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbFoodName.Location = new System.Drawing.Point(0, 119);
             this.lbFoodName.Name = "lbFoodName";
-            this.lbFoodName.Size = new System.Drawing.Size(151, 31);
+            this.lbFoodName.Size = new System.Drawing.Size(151, 44);
             this.lbFoodName.TabIndex = 1;
-            this.lbFoodName.Text = "label1";
-            this.lbFoodName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbFoodName.Text = "label1ddddddddddddddddddddddd";
+            this.lbFoodName.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // lbFoodPrice
             // 
@@ -76,7 +76,7 @@ namespace CuoiKi_QuanLyQuanAnNhanh.Control
             this.Controls.Add(this.pbx_FoodImage);
             this.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "ItemFood";
-            this.Size = new System.Drawing.Size(148, 157);
+            this.Size = new System.Drawing.Size(148, 172);
             ((System.ComponentModel.ISupportInitialize)(this.pbx_FoodImage)).EndInit();
             this.ResumeLayout(false);
 
