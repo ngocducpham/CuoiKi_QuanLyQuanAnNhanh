@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +21,7 @@ namespace CuoiKi_QuanLyQuanAnNhanh
             ItemFood ifd = new ItemFood();
             ifd.FoodName = "Ga Ran";
             ifd.FoodPrice = "150K VND";
+            ifd.SetImage(@"D:\Programing\C# project\LT Windown\CuoiKi_QuanLyQuanAnNhanh\CuoiKi_QuanLyQuanAnNhanh\Picture\garan.jpg");
             flpnFood.Controls.Add(ifd);
 
             ItemFood ifd2 = new ItemFood();

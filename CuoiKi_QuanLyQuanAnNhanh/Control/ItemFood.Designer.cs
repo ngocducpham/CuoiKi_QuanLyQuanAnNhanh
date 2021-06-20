@@ -29,7 +29,6 @@ namespace CuoiKi_QuanLyQuanAnNhanh.Control
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ItemFood));
             this.pbx_FoodImage = new System.Windows.Forms.PictureBox();
             this.lbFoodName = new System.Windows.Forms.Label();
             this.lbFoodPrice = new System.Windows.Forms.Label();
@@ -38,7 +37,6 @@ namespace CuoiKi_QuanLyQuanAnNhanh.Control
             // 
             // pbx_FoodImage
             // 
-            this.pbx_FoodImage.Image = ((System.Drawing.Image)(resources.GetObject("pbx_FoodImage.Image")));
             this.pbx_FoodImage.InitialImage = null;
             this.pbx_FoodImage.Location = new System.Drawing.Point(0, 0);
             this.pbx_FoodImage.Name = "pbx_FoodImage";
