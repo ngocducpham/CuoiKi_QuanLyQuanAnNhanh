@@ -26,9 +26,8 @@ namespace CuoiKi_QuanLyQuanAnNhanh
 
             ItemFood ifd2 = new ItemFood();
             ifd2.FoodName = "Khoai Tay Chien";
-            ifd2.FoodPrice = "15K VND";
+            ifd2.FoodPrice = "1.5 USD";
             ifd2.SetImage(@"D:\Programing\C# project\LT Windown\CuoiKi_QuanLyQuanAnNhanh\CuoiKi_QuanLyQuanAnNhanh\Picture\khoaitaychien.jpg");
-            flpnFood.Controls.Add(ifd2);
 
             ItemTable it1 = new ItemTable();
             it1.TableName = "1";
@@ -40,6 +39,8 @@ namespace CuoiKi_QuanLyQuanAnNhanh
 
             flpnTable.Controls.Add(it1);
             flpnTable.Controls.Add(it2);
+            flpnMonAn.Controls.Add(ifd2);
+
         }
     }
 }
