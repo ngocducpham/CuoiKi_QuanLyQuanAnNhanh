@@ -36,21 +36,22 @@ namespace CuoiKi_QuanLyQuanAnNhanh.Control
             // lbTable
             // 
             this.lbTable.BackColor = System.Drawing.Color.Silver;
-            this.lbTable.Font = new System.Drawing.Font("Segoe UI", 43.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTable.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTable.ForeColor = System.Drawing.Color.White;
             this.lbTable.Location = new System.Drawing.Point(0, 0);
             this.lbTable.Name = "lbTable";
-            this.lbTable.Size = new System.Drawing.Size(150, 140);
+            this.lbTable.Size = new System.Drawing.Size(200, 195);
             this.lbTable.TabIndex = 0;
-            this.lbTable.Text = "99";
+            this.lbTable.Text = "Ban 04";
             this.lbTable.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbTable.Click += new System.EventHandler(this.lbTable_Click);
             // 
             // label2
             // 
             this.label2.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.label2.Location = new System.Drawing.Point(0, 140);
+            this.label2.Location = new System.Drawing.Point(0, 195);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(150, 5);
+            this.label2.Size = new System.Drawing.Size(200, 5);
             this.label2.TabIndex = 1;
             // 
             // ItemTable
@@ -62,6 +63,7 @@ namespace CuoiKi_QuanLyQuanAnNhanh.Control
             this.Controls.Add(this.lbTable);
             this.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "ItemTable";
+            this.Size = new System.Drawing.Size(200, 200);
             this.ResumeLayout(false);
 
         }

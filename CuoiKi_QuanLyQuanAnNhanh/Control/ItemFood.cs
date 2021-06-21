@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
@@ -10,19 +11,6 @@ namespace CuoiKi_QuanLyQuanAnNhanh.Control
         {
             InitializeComponent();
         }
-
-        //int foodPrice = 0;
-        //public int FoodPrice
-        //{
-        //    get => foodPrice;
-        //    set
-        //    {
-        //        foodPrice = value;
-        //        string price;
-        //        if (foodPrice > 1000)
-
-        //    }
-        //}
 
         string foodPrice;
         public string FoodPrice
@@ -57,14 +45,14 @@ namespace CuoiKi_QuanLyQuanAnNhanh.Control
 
         public string FoodID { get; set; }
 
-        private byte[] image;
-        public byte[] SetImage 
+        private byte[] images;
+        public byte[] Images 
         {
-            get => image;
+            get => images;
             set
             {
-                image = value;
-                pbx_FoodImage.Image = Image.FromStream(new MemoryStream(image));
+                images = value;
+                pbx_FoodImage.Image = Image.FromStream(new MemoryStream(images));
             }
         }
 
@@ -77,6 +65,14 @@ namespace CuoiKi_QuanLyQuanAnNhanh.Control
         {
             MemoryStream data = new MemoryStream(byteData);
             pbx_FoodImage.Image = Image.FromStream(data);
+        }
+
+        public event EventHandler ItemClick;
+
+        private void pbx_FoodImage_Click(object sender, EventArgs e)
+        {
+            if (this.ItemClick != null)
+                this.ItemClick(this, e);
         }
     }
 }

@@ -44,6 +44,7 @@ namespace CuoiKi_QuanLyQuanAnNhanh.Control
             this.pbx_FoodImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbx_FoodImage.TabIndex = 0;
             this.pbx_FoodImage.TabStop = false;
+            this.pbx_FoodImage.Click += new System.EventHandler(this.pbx_FoodImage_Click);
             // 
             // lbFoodName
             // 

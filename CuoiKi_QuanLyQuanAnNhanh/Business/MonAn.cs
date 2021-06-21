@@ -36,5 +36,14 @@ namespace CuoiKi_QuanLyQuanAnNhanh.Business
 
             return SqlHelper.ExecuteNonQuery("dbo.sp_UpdateMonAn", CommandType.StoredProcedure, p1, p2, p3, p4, p5);
         }
+
+        // sp_LayOrderTheoBan @idban INT
+        public static DataTable LayOrder(string idBan)
+        {
+            SqlParameter pa = new SqlParameter("@idban", SqlDbType.Int);
+            pa.Value = idBan;
+
+            return SqlHelper.Execute("dbo.sp_LayOrderTheoBan", CommandType.StoredProcedure, pa);
+        }
     }
 }

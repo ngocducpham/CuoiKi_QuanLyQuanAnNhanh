@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace CuoiKi_QuanLyQuanAnNhanh.Control
@@ -16,10 +17,20 @@ namespace CuoiKi_QuanLyQuanAnNhanh.Control
             set => lbTable.BackColor = value;
         }
 
+        public string TableID { get; set; }
+
         public string TableName
         {
             get => lbTable.Text;
             set => lbTable.Text = value;
+        }
+
+        public event EventHandler ItemClick;
+
+        private void lbTable_Click(object sender, EventArgs e)
+        {
+            if (ItemClick != null)
+                ItemClick(this, e);
         }
     }
 }
