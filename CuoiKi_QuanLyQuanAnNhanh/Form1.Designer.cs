@@ -45,7 +45,7 @@ namespace CuoiKi_QuanLyQuanAnNhanh
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.lbOrderID = new System.Windows.Forms.Label();
-            this.flpnFood = new System.Windows.Forms.FlowLayoutPanel();
+            this.flpnOrder = new System.Windows.Forms.FlowLayoutPanel();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
@@ -64,9 +64,9 @@ namespace CuoiKi_QuanLyQuanAnNhanh
             this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.button17 = new System.Windows.Forms.Button();
-            this.button16 = new System.Windows.Forms.Button();
+            this.ma_btnCapNhat = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
+            this.ma_btnThemHinh = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
@@ -151,7 +151,7 @@ namespace CuoiKi_QuanLyQuanAnNhanh
             // 
             this.tabPage1.BackColor = System.Drawing.SystemColors.Control;
             this.tabPage1.Controls.Add(this.panel1);
-            this.tabPage1.Controls.Add(this.flpnFood);
+            this.tabPage1.Controls.Add(this.flpnOrder);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -187,6 +187,7 @@ namespace CuoiKi_QuanLyQuanAnNhanh
             this.button6.TabIndex = 7;
             this.button6.Text = "Chọn Bàn";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // label2
             // 
@@ -289,15 +290,15 @@ namespace CuoiKi_QuanLyQuanAnNhanh
             this.lbOrderID.TabIndex = 0;
             this.lbOrderID.Text = "Mã Order: 122125";
             // 
-            // flpnFood
+            // flpnOrder
             // 
-            this.flpnFood.AutoScroll = true;
-            this.flpnFood.BackColor = System.Drawing.Color.White;
-            this.flpnFood.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flpnFood.Location = new System.Drawing.Point(6, 9);
-            this.flpnFood.Name = "flpnFood";
-            this.flpnFood.Size = new System.Drawing.Size(812, 584);
-            this.flpnFood.TabIndex = 1;
+            this.flpnOrder.AutoScroll = true;
+            this.flpnOrder.BackColor = System.Drawing.Color.White;
+            this.flpnOrder.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flpnOrder.Location = new System.Drawing.Point(6, 9);
+            this.flpnOrder.Name = "flpnOrder";
+            this.flpnOrder.Size = new System.Drawing.Size(812, 584);
+            this.flpnOrder.TabIndex = 1;
             // 
             // tabPage2
             // 
@@ -445,9 +446,9 @@ namespace CuoiKi_QuanLyQuanAnNhanh
             this.panel4.Controls.Add(this.label23);
             this.panel4.Controls.Add(this.label22);
             this.panel4.Controls.Add(this.button17);
-            this.panel4.Controls.Add(this.button16);
+            this.panel4.Controls.Add(this.ma_btnCapNhat);
             this.panel4.Controls.Add(this.button15);
-            this.panel4.Controls.Add(this.button14);
+            this.panel4.Controls.Add(this.ma_btnThemHinh);
             this.panel4.Controls.Add(this.pictureBox1);
             this.panel4.Controls.Add(this.radioButton2);
             this.panel4.Controls.Add(this.radioButton1);
@@ -490,14 +491,15 @@ namespace CuoiKi_QuanLyQuanAnNhanh
             this.button17.Text = "Xoa Mon";
             this.button17.UseVisualStyleBackColor = true;
             // 
-            // button16
+            // ma_btnCapNhat
             // 
-            this.button16.Location = new System.Drawing.Point(133, 501);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(97, 31);
-            this.button16.TabIndex = 4;
-            this.button16.Text = "Cap Nhat";
-            this.button16.UseVisualStyleBackColor = true;
+            this.ma_btnCapNhat.Location = new System.Drawing.Point(133, 501);
+            this.ma_btnCapNhat.Name = "ma_btnCapNhat";
+            this.ma_btnCapNhat.Size = new System.Drawing.Size(97, 31);
+            this.ma_btnCapNhat.TabIndex = 4;
+            this.ma_btnCapNhat.Text = "Cap Nhat";
+            this.ma_btnCapNhat.UseVisualStyleBackColor = true;
+            this.ma_btnCapNhat.Click += new System.EventHandler(this.ma_btnCapNhat_Click);
             // 
             // button15
             // 
@@ -508,14 +510,15 @@ namespace CuoiKi_QuanLyQuanAnNhanh
             this.button15.Text = "Them Mon";
             this.button15.UseVisualStyleBackColor = true;
             // 
-            // button14
+            // ma_btnThemHinh
             // 
-            this.button14.Location = new System.Drawing.Point(236, 446);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(92, 31);
-            this.button14.TabIndex = 4;
-            this.button14.Text = "Them Hinh";
-            this.button14.UseVisualStyleBackColor = true;
+            this.ma_btnThemHinh.Location = new System.Drawing.Point(236, 446);
+            this.ma_btnThemHinh.Name = "ma_btnThemHinh";
+            this.ma_btnThemHinh.Size = new System.Drawing.Size(92, 31);
+            this.ma_btnThemHinh.TabIndex = 4;
+            this.ma_btnThemHinh.Text = "Them Hinh";
+            this.ma_btnThemHinh.UseVisualStyleBackColor = true;
+            this.ma_btnThemHinh.Click += new System.EventHandler(this.ma_btnThemHinh_Click);
             // 
             // pictureBox1
             // 
@@ -873,7 +876,7 @@ namespace CuoiKi_QuanLyQuanAnNhanh
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(131, 88);
+            this.textBox3.Location = new System.Drawing.Point(133, 88);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(232, 23);
             this.textBox3.TabIndex = 1;
@@ -982,6 +985,7 @@ namespace CuoiKi_QuanLyQuanAnNhanh
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quan Ly Quan An Nhanh";
+            this.Load += new System.EventHandler(this.frmMain_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -1010,7 +1014,7 @@ namespace CuoiKi_QuanLyQuanAnNhanh
 
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.FlowLayoutPanel flpnFood;
+        private System.Windows.Forms.FlowLayoutPanel flpnOrder;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.FlowLayoutPanel flpnTable;
         private System.Windows.Forms.Panel panel1;
@@ -1042,9 +1046,9 @@ namespace CuoiKi_QuanLyQuanAnNhanh
         private System.Windows.Forms.FlowLayoutPanel flpnMonAn;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button button17;
-        private System.Windows.Forms.Button button16;
+        private System.Windows.Forms.Button ma_btnCapNhat;
         private System.Windows.Forms.Button button15;
-        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Button ma_btnThemHinh;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;

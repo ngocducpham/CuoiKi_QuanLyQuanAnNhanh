@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business\MonAn.cs" />
+    <Compile Include="Business\Order.cs" />
     <Compile Include="Control\FlatTab.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -61,6 +63,13 @@
     <Compile Include="Control\ItemTable.Designer.cs">
       <DependentUpon>ItemTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\IteamStaff.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\IteamStaff.Designer.cs">
+      <DependentUpon>IteamStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\SqlHelper.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +83,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Control\ItemTable.resx">
       <DependentUpon>ItemTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\IteamStaff.resx">
+      <DependentUpon>IteamStaff.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
