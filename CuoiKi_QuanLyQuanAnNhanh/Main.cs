@@ -12,8 +12,6 @@ namespace CuoiKi_QuanLyQuanAnNhanh
     public partial class frmMain : Form
     {
         private byte[] ImageByte;
-        //private List<ItemFood> Foods;
-        //private List<ItemTable> Tables;
         private ItemTable currentItemTable;
         private ItemFood currentItemFood;
         private string currentOrderID;
