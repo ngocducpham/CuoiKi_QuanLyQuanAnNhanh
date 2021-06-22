@@ -356,7 +356,7 @@ namespace CuoiKi_QuanLyQuanAnNhanh
             this.Controls.Add(this.panel6);
             this.Name = "frmTaoNV";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "frmTaoNV";
+            this.Text = "Tạo Nhân Viên";
             ((System.ComponentModel.ISupportInitialize)(this.pbxNhanVien)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
