@@ -37,6 +37,24 @@ namespace CuoiKi_QuanLyQuanAnNhanh.Business
             return SqlHelper.ExecuteNonQuery("dbo.sp_UpdateMonAn", CommandType.StoredProcedure, p1, p2, p3, p4, p5);
         }
 
+        //sp_InsertMonAn @tenmonan NVARCHAR(100), @dongia FLOAT, @donvitinh VARCHAR(10), @hinhanh varbinary(MAX)
+        public static bool Add(string tenMonAn, string donGia, string donVi, byte[] hinhAnh)
+        {
+            SqlParameter p2 = new SqlParameter("@tenmonan", SqlDbType.VarChar);
+            p2.Value = tenMonAn;
+
+            SqlParameter p3 = new SqlParameter("@dongia", SqlDbType.Float);
+            p3.Value = donGia;
+
+            SqlParameter p4 = new SqlParameter("@donvitinh", SqlDbType.VarChar);
+            p4.Value = donVi;
+
+            SqlParameter p5 = new SqlParameter("@hinhanh", SqlDbType.VarBinary);
+            p5.Value = hinhAnh;
+
+            return SqlHelper.ExecuteNonQuery("dbo.sp_InsertMonAn", CommandType.StoredProcedure, p2, p3, p4, p5);
+        }
+
         // sp_LayOrderTheoBan @idban INT
         public static DataTable LayOrder(string idBan)
         {
@@ -44,6 +62,15 @@ namespace CuoiKi_QuanLyQuanAnNhanh.Business
             pa.Value = idBan;
 
             return SqlHelper.Execute("dbo.sp_LayOrderTheoBan", CommandType.StoredProcedure, pa);
+        }
+
+        //sp_DeleteMonAn @mamonan
+        public static bool Delete(string maMonAn)
+        {
+            SqlParameter p1 = new SqlParameter("@mamonan", SqlDbType.Int);
+            p1.Value = maMonAn;
+
+            return SqlHelper.ExecuteNonQuery("dbo.sp_DeleteMonAn", CommandType.StoredProcedure, p1);
         }
     }
 }

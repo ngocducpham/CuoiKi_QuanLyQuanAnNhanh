@@ -2,7 +2,6 @@
 using CuoiKi_QuanLyQuanAnNhanh.Control;
 using DataAccess;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.IO;
@@ -13,10 +12,12 @@ namespace CuoiKi_QuanLyQuanAnNhanh
     public partial class frmMain : Form
     {
         private byte[] ImageByte;
-        private List<ItemFood> Foods;
-        private List<ItemTable> Tables;
+        //private List<ItemFood> Foods;
+        //private List<ItemTable> Tables;
         private ItemTable currentItemTable;
-        private string MaHoaDonHienTai;
+        private ItemFood currentItemFood;
+        private string currentOrderID;
+        private string selectedFoodName;
 
         public frmMain()
         {
@@ -32,36 +33,27 @@ namespace CuoiKi_QuanLyQuanAnNhanh
                 Application.Exit();
             }
 
-            Foods = new List<ItemFood>();
-            Tables = new List<ItemTable>();
+            //Foods = new List<ItemFood>();
+            //Tables = new List<ItemTable>();
 
             InitTabMonAn();
             InitOrderTab();
-            InitTabSoDo();
+            InitTabBanAn();
+
+            currentOrderID = HoaDon.LayMaHoaDon();
+            hd_lbMaHoaDon.Text = "Mã Hóa Đơn: " + currentOrderID;
         }
 
-        private void InitOrderTab()
+        private void tabControl_SelectedIndexChanged(object sender, EventArgs e)
         {
-            DataTable orderTable = MonAn.Load();
-
-            foreach (DataRow row in orderTable.Rows)
-            {
-                ItemFood itemFood = new ItemFood
-                {
-                    FoodID = row[0].ToString(),
-                    FoodName = row[1].ToString(),
-                    FoodPrice = row[2].ToString(),
-                    FoodUnit = row[3].ToString(),
-                    Images = (byte[])row[4]
-                };
-                Foods.Add(itemFood);
-                flpnOrder.Controls.Add(itemFood);
-            }
+            InitOrderTab();
+            InitTabBanAn();
+            InitTabMonAn();
         }
 
         #region Tab BanAn
 
-        private void InitTabSoDo()
+        private void InitTabBanAn()
         {
             DataTable banAn = BanAn.Load();
             flpnTable.Controls.Clear();
@@ -80,46 +72,48 @@ namespace CuoiKi_QuanLyQuanAnNhanh
                 };
 
                 item.ItemClick += Item_ItemClick;
-                Tables.Add(item);
+                //Tables.Add(item);
                 flpnTable.Controls.Add(item);
             }
         }
 
         private void Item_ItemClick(object sender, EventArgs e)
         {
-            currentItemTable = (ItemTable)sender;       
+            currentItemTable = (ItemTable)sender;
             dgvSoDoOrder.DataSource = null;
             dgvSoDoOrder.DataSource = MonAn.LayOrder(currentItemTable.TableID);
-            sd_lbHeader.Text = "Danh Sách Order: " + currentItemTable.TableName + " - ID: " + currentItemTable.TableID;
+            sd_lbHeader.Text = "Danh Sách Món Ăn: ";
             ba_txtTenBan.Text = currentItemTable.TableName;
+            ba_lbTongTien.Text = "Tổng Giá Tiền: " + BanAn.LayTienHoaDon(currentItemTable.TableID) + " VND";
         }
 
         private void ba_btnThanhToan_Click(object sender, EventArgs e)
         {
             BanAn.ThanhToan(currentItemTable.TableID);
             dgvSoDoOrder.DataSource = MonAn.LayOrder(currentItemTable.TableID);
-            InitTabSoDo();
+            InitTabBanAn();
         }
 
         private void ba_btnThemBan_Click(object sender, EventArgs e)
         {
             BanAn.ThemBanAn(ba_txtTenBan.Text);
-            InitTabSoDo();
+            InitTabBanAn();
         }
 
         private void ba_btnXoaBan_Click(object sender, EventArgs e)
         {
             BanAn.XoaBan(currentItemTable.TableID);
-            InitTabSoDo();
+            InitTabBanAn();
         }
 
         private void ba_btnChinhSua_Click(object sender, EventArgs e)
         {
-            
+            currentOrderID = BanAn.LayMaHoaDon(currentItemTable.TableID);
+            hd_dgvHoaDon.DataSource = HoaDon.LayMonAn(currentOrderID);
             tabControl.SelectedIndex = 0;
-            string MaHoaDonHienTai = BanAn.LayMaHoaDon(currentItemTable.TableID);
-            hd_lbMaHoaDon.Text = "Mã Hóa Đơn: " + MaHoaDonHienTai;
-            hd_lbBanAn.Text = currentItemTable.TableName;
+            hd_lbMaHoaDon.Text = "Mã Hóa Đơn: " + currentOrderID;
+            hd_lbThongTinHoaDon.Text = "Hóa Đơn Cho: " + currentItemTable.TableName;
+
         }
         #endregion
 
@@ -127,6 +121,7 @@ namespace CuoiKi_QuanLyQuanAnNhanh
         private void InitTabMonAn()
         {
             DataTable orderTable = MonAn.Load();
+            flpnMonAn.Controls.Clear();
 
             foreach (DataRow row in orderTable.Rows)
             {
@@ -139,7 +134,7 @@ namespace CuoiKi_QuanLyQuanAnNhanh
                     Images = (byte[])row[4]
                 };
                 itemFood.ItemClick += ItemFood_ItemClick;
-                Foods.Add(itemFood);
+                //Foods.Add(itemFood);
                 flpnMonAn.Controls.Add(itemFood);
             }
         }
@@ -151,6 +146,7 @@ namespace CuoiKi_QuanLyQuanAnNhanh
             ma_txtDonGia.Text = item.FoodPrice;
             ma_cbxDonVi.Text = item.FoodUnit;
             ma_pbxHinhAnh.Image = Image.FromStream(new MemoryStream(item.Images));
+            currentItemFood = item;
         }
 
 
@@ -167,7 +163,7 @@ namespace CuoiKi_QuanLyQuanAnNhanh
                     CheckPathExists = true,
                 };
 
-                if(dlg.ShowDialog() == DialogResult.OK)
+                if (dlg.ShowDialog() == DialogResult.OK)
                 {
                     FileStream fs = new FileStream(dlg.FileName, FileMode.Open, FileAccess.Read);
                     BinaryReader br = new BinaryReader(fs);
@@ -175,7 +171,7 @@ namespace CuoiKi_QuanLyQuanAnNhanh
                     ma_pbxHinhAnh.Image = Image.FromStream(fs);
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -183,10 +179,107 @@ namespace CuoiKi_QuanLyQuanAnNhanh
 
         private void ma_btnCapNhat_Click(object sender, EventArgs e)
         {
-            MonAn.Update("12", "Pepsi", "1", "USD", ImageByte);
+            MonAn.Update(currentItemFood.FoodID, ma_txtTenMonAn.Text, ma_txtDonGia.Text, ma_cbxDonVi.Text, ImageByte);
+            InitTabMonAn();
+            InitOrderTab();
+        }
+
+        private void ma_btnThemMon_Click(object sender, EventArgs e)
+        {
+            MonAn.Add(ma_txtTenMonAn.Text, ma_txtDonGia.Text, ma_cbxDonVi.Text, ImageByte);
+            InitTabMonAn();
+            InitOrderTab();
+        }
+
+        private void ma_btnXoaMon_Click(object sender, EventArgs e)
+        {
+            MonAn.Delete(currentItemFood.FoodID);
+            InitTabMonAn();
+            InitOrderTab();
         }
 
 
+        #endregion
+
+        #region Tab HoaDon
+
+        private void InitOrderTab()
+        {
+            DataTable orderTable = MonAn.Load();
+            flpnOrder.Controls.Clear();
+
+            foreach (DataRow row in orderTable.Rows)
+            {
+                ItemFood itemFood = new ItemFood
+                {
+                    FoodID = row[0].ToString(),
+                    FoodName = row[1].ToString(),
+                    FoodPrice = row[2].ToString(),
+                    FoodUnit = row[3].ToString(),
+                    Images = (byte[])row[4]
+                };
+
+                itemFood.ItemClick += ItemFood_ItemClick1;
+                flpnOrder.Controls.Add(itemFood);
+            }
+        }
+
+        private void ItemFood_ItemClick1(object sender, EventArgs e)
+        {
+            currentItemFood = (ItemFood)sender;
+
+            string idban;
+            idban = currentItemTable.TableID;
+
+            HoaDon.ThemMon(currentOrderID, currentItemFood.FoodID, "100", idban);
+            hd_dgvHoaDon.DataSource = HoaDon.LayMonAn(currentOrderID);
+
+            hd_lbTongTien.Text = "Tổng tiền: " + HoaDon.TinhTienHoaDon(currentOrderID) + " VND";
+        }
+
+        private void hd_btnXoaMon_Click(object sender, EventArgs e)
+        {
+            HoaDon.XoaMon(currentOrderID, selectedFoodName, currentItemTable.TableID);
+            hd_dgvHoaDon.DataSource = HoaDon.LayMonAn(currentOrderID);
+            hd_lbTongTien.Text = "Tổng tiền: " + HoaDon.TinhTienHoaDon(currentOrderID) + " VND";
+        }
+
+        private void hd_dgvHoaDon_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            selectedFoodName = hd_dgvHoaDon.Rows[e.RowIndex].Cells[0].Value.ToString();
+        }
+
+        private void hd_btnLuu_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectedIndex = 1;
+        }
+
+        private void hd_btnHuyBo_Click(object sender, EventArgs e)
+        {
+            HoaDon.XoaHoaDon(currentOrderID);
+            tabControl.SelectedIndex = 1;
+        }
+
+        private void hd_btnThanhToan_Click(object sender, EventArgs e)
+        {
+            HoaDon.ThanhToan(currentOrderID);
+            tabControl.SelectedIndex = 1;
+        }
+
+        private void hd_btnGiam_Click(object sender, EventArgs e)
+        {
+            HoaDon.GiamMonAn(currentOrderID, selectedFoodName, currentItemTable.TableID);
+            hd_dgvHoaDon.DataSource = HoaDon.LayMonAn(currentOrderID);
+            hd_lbTongTien.Text = "Tổng tiền: " + HoaDon.TinhTienHoaDon(currentOrderID) + " VND";
+        }
+
+        #endregion
+
+        #region Tab NhanVien
+        private void InitTabNhanVien()
+        {
+
+        }
 
 
         #endregion

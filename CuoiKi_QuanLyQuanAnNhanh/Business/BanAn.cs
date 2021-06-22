@@ -59,10 +59,32 @@ namespace CuoiKi_QuanLyQuanAnNhanh.Business
         public static bool ThanhToan(string idBan)
         {
             string maHD = LayMaHoaDon(idBan);
-            SqlParameter pa = new SqlParameter("@mahoadon", SqlDbType.VarChar);
+            SqlParameter pa = new SqlParameter("@mahoadon", SqlDbType.Int);
             pa.Value = maHD;
 
             return SqlHelper.ExecuteNonQuery("dbo.sp_ThanhToanHoaDon", CommandType.StoredProcedure, pa);
+        }
+
+        //sp_LayTienHoaDon (@mahoadon INT)
+        public static string LayTienHoaDon(string idBan)
+        {
+            string maHD = LayMaHoaDon(idBan);
+            SqlParameter pa = new SqlParameter("@mahoadon", SqlDbType.Int);
+            pa.Value = maHD;
+
+            SqlParameter res = new SqlParameter("@res", SqlDbType.Float);
+            res.Direction = ParameterDirection.ReturnValue;
+
+            SqlHelper.ExecuteNonQuery("dbo.sp_LayTienHoaDon", CommandType.StoredProcedure, pa, res);
+
+            try
+            {
+                return ((double)res.Value).ToString();
+            }
+            catch
+            {
+                return "0";
+            }
         }
     }
 }

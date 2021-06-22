@@ -49,6 +49,7 @@
     <Compile Include="Business\MonAn.cs" />
     <Compile Include="Business\HoaDon.cs" />
     <Compile Include="Business\BanAn.cs" />
+    <Compile Include="Business\NhanVien.cs" />
     <Compile Include="Control\FlatTab.cs">
       <SubType>Component</SubType>
     </Compile>

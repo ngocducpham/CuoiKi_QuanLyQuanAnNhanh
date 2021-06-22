@@ -32,21 +32,20 @@ namespace CuoiKi_QuanLyQuanAnNhanh
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button6 = new System.Windows.Forms.Button();
-            this.hd_lbBanAn = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.hd_lbThongTinHoaDon = new System.Windows.Forms.Label();
+            this.hd_btnLuu = new System.Windows.Forms.Button();
+            this.hd_btnHuyBo = new System.Windows.Forms.Button();
+            this.hd_btnGiam = new System.Windows.Forms.Button();
+            this.hd_btnXoaMon = new System.Windows.Forms.Button();
+            this.hd_btnThanhToan = new System.Windows.Forms.Button();
+            this.hd_lbTongTien = new System.Windows.Forms.Label();
+            this.hd_dgvHoaDon = new System.Windows.Forms.DataGridView();
             this.hd_lbMaHoaDon = new System.Windows.Forms.Label();
             this.flpnOrder = new System.Windows.Forms.FlowLayoutPanel();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.ba_txtTenBan = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.ba_btnXoaBan = new System.Windows.Forms.Button();
             this.ba_btnThemBan = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -58,6 +57,7 @@ namespace CuoiKi_QuanLyQuanAnNhanh
             this.flpnTable = new System.Windows.Forms.FlowLayoutPanel();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.ma_cbxDonVi = new System.Windows.Forms.ComboBox();
             this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.ma_btnXoaMon = new System.Windows.Forms.Button();
@@ -106,16 +106,14 @@ namespace CuoiKi_QuanLyQuanAnNhanh
             this.label9 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label26 = new System.Windows.Forms.Label();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.label8 = new System.Windows.Forms.Label();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.ma_cbxDonVi = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.ba_txtTenBan = new System.Windows.Forms.TextBox();
+            this.ba_lbTongTien = new System.Windows.Forms.Label();
+            this.flpnNhanVien = new System.Windows.Forms.FlowLayoutPanel();
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hd_dgvHoaDon)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -126,7 +124,6 @@ namespace CuoiKi_QuanLyQuanAnNhanh
             this.tabPage4.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl
@@ -142,6 +139,7 @@ namespace CuoiKi_QuanLyQuanAnNhanh
             this.tabControl.Size = new System.Drawing.Size(1242, 633);
             this.tabControl.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl.TabIndex = 0;
+            this.tabControl.SelectedIndexChanged += new System.EventHandler(this.tabControl_SelectedIndexChanged);
             // 
             // tabPage1
             // 
@@ -158,122 +156,97 @@ namespace CuoiKi_QuanLyQuanAnNhanh
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.button6);
-            this.panel1.Controls.Add(this.hd_lbBanAn);
-            this.panel1.Controls.Add(this.checkBox1);
-            this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button13);
-            this.panel1.Controls.Add(this.button11);
-            this.panel1.Controls.Add(this.button10);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Controls.Add(this.hd_lbThongTinHoaDon);
+            this.panel1.Controls.Add(this.hd_btnLuu);
+            this.panel1.Controls.Add(this.hd_btnHuyBo);
+            this.panel1.Controls.Add(this.hd_btnGiam);
+            this.panel1.Controls.Add(this.hd_btnXoaMon);
+            this.panel1.Controls.Add(this.hd_btnThanhToan);
+            this.panel1.Controls.Add(this.hd_lbTongTien);
+            this.panel1.Controls.Add(this.hd_dgvHoaDon);
             this.panel1.Controls.Add(this.hd_lbMaHoaDon);
             this.panel1.Location = new System.Drawing.Point(824, 9);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(404, 584);
             this.panel1.TabIndex = 2;
             // 
-            // button6
+            // hd_lbThongTinHoaDon
             // 
-            this.button6.Location = new System.Drawing.Point(222, 73);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(95, 29);
-            this.button6.TabIndex = 7;
-            this.button6.Text = "Chọn Bàn";
-            this.button6.UseVisualStyleBackColor = true;
+            this.hd_lbThongTinHoaDon.Location = new System.Drawing.Point(12, 42);
+            this.hd_lbThongTinHoaDon.Name = "hd_lbThongTinHoaDon";
+            this.hd_lbThongTinHoaDon.Size = new System.Drawing.Size(300, 19);
+            this.hd_lbThongTinHoaDon.TabIndex = 6;
+            this.hd_lbThongTinHoaDon.Text = "Hóa Đơn Mang Đi";
             // 
-            // hd_lbBanAn
+            // hd_btnLuu
             // 
-            this.hd_lbBanAn.Location = new System.Drawing.Point(12, 79);
-            this.hd_lbBanAn.Name = "hd_lbBanAn";
-            this.hd_lbBanAn.Size = new System.Drawing.Size(200, 17);
-            this.hd_lbBanAn.TabIndex = 6;
-            this.hd_lbBanAn.Text = "Bàn ăn số 1";
+            this.hd_btnLuu.Location = new System.Drawing.Point(185, 544);
+            this.hd_btnLuu.Name = "hd_btnLuu";
+            this.hd_btnLuu.Size = new System.Drawing.Size(87, 29);
+            this.hd_btnLuu.TabIndex = 4;
+            this.hd_btnLuu.Text = "Lưu";
+            this.hd_btnLuu.UseVisualStyleBackColor = true;
+            this.hd_btnLuu.Click += new System.EventHandler(this.hd_btnLuu_Click);
             // 
-            // checkBox1
+            // hd_btnHuyBo
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(15, 44);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(77, 21);
-            this.checkBox1.TabIndex = 5;
-            this.checkBox1.Text = "Mang đi";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.hd_btnHuyBo.Location = new System.Drawing.Point(38, 544);
+            this.hd_btnHuyBo.Name = "hd_btnHuyBo";
+            this.hd_btnHuyBo.Size = new System.Drawing.Size(141, 29);
+            this.hd_btnHuyBo.TabIndex = 4;
+            this.hd_btnHuyBo.Text = "Hủy Bỏ Hóa Đơn";
+            this.hd_btnHuyBo.UseVisualStyleBackColor = true;
+            this.hd_btnHuyBo.Click += new System.EventHandler(this.hd_btnHuyBo_Click);
             // 
-            // button5
+            // hd_btnGiam
             // 
-            this.button5.Location = new System.Drawing.Point(207, 544);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(87, 29);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "Luu";
-            this.button5.UseVisualStyleBackColor = true;
+            this.hd_btnGiam.Location = new System.Drawing.Point(168, 429);
+            this.hd_btnGiam.Name = "hd_btnGiam";
+            this.hd_btnGiam.Size = new System.Drawing.Size(126, 29);
+            this.hd_btnGiam.TabIndex = 4;
+            this.hd_btnGiam.Text = "Giảm Số Lượng";
+            this.hd_btnGiam.UseVisualStyleBackColor = true;
+            this.hd_btnGiam.Click += new System.EventHandler(this.hd_btnGiam_Click);
             // 
-            // button4
+            // hd_btnXoaMon
             // 
-            this.button4.Location = new System.Drawing.Point(114, 544);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(87, 29);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "Huy bo";
-            this.button4.UseVisualStyleBackColor = true;
+            this.hd_btnXoaMon.Location = new System.Drawing.Point(300, 429);
+            this.hd_btnXoaMon.Name = "hd_btnXoaMon";
+            this.hd_btnXoaMon.Size = new System.Drawing.Size(87, 29);
+            this.hd_btnXoaMon.TabIndex = 4;
+            this.hd_btnXoaMon.Text = "Xóa Món";
+            this.hd_btnXoaMon.UseVisualStyleBackColor = true;
+            this.hd_btnXoaMon.Click += new System.EventHandler(this.hd_btnXoaMon_Click);
             // 
-            // button13
+            // hd_btnThanhToan
             // 
-            this.button13.Location = new System.Drawing.Point(36, 422);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(126, 29);
-            this.button13.TabIndex = 4;
-            this.button13.Text = "Tăng Số Lượng";
-            this.button13.UseVisualStyleBackColor = true;
+            this.hd_btnThanhToan.Location = new System.Drawing.Point(278, 544);
+            this.hd_btnThanhToan.Name = "hd_btnThanhToan";
+            this.hd_btnThanhToan.Size = new System.Drawing.Size(109, 29);
+            this.hd_btnThanhToan.TabIndex = 4;
+            this.hd_btnThanhToan.Text = "Thanh Toán";
+            this.hd_btnThanhToan.UseVisualStyleBackColor = true;
+            this.hd_btnThanhToan.Click += new System.EventHandler(this.hd_btnThanhToan_Click);
             // 
-            // button11
+            // hd_lbTongTien
             // 
-            this.button11.Location = new System.Drawing.Point(168, 422);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(126, 29);
-            this.button11.TabIndex = 4;
-            this.button11.Text = "Giảm Số Lượng";
-            this.button11.UseVisualStyleBackColor = true;
+            this.hd_lbTongTien.Location = new System.Drawing.Point(15, 507);
+            this.hd_lbTongTien.Name = "hd_lbTongTien";
+            this.hd_lbTongTien.Size = new System.Drawing.Size(372, 19);
+            this.hd_lbTongTien.TabIndex = 3;
+            this.hd_lbTongTien.Text = "Tổng tiền:14000 VND";
+            this.hd_lbTongTien.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // button10
+            // hd_dgvHoaDon
             // 
-            this.button10.Location = new System.Drawing.Point(300, 422);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(87, 29);
-            this.button10.TabIndex = 4;
-            this.button10.Text = "Xóa Món";
-            this.button10.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(300, 544);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(87, 29);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "Thanh toan";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(245, 509);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(142, 17);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Tổng tiền:14000 VND";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(15, 118);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(372, 289);
-            this.dataGridView1.TabIndex = 2;
+            this.hd_dgvHoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.hd_dgvHoaDon.Location = new System.Drawing.Point(15, 83);
+            this.hd_dgvHoaDon.Name = "hd_dgvHoaDon";
+            this.hd_dgvHoaDon.RowHeadersWidth = 51;
+            this.hd_dgvHoaDon.RowTemplate.Height = 24;
+            this.hd_dgvHoaDon.Size = new System.Drawing.Size(372, 330);
+            this.hd_dgvHoaDon.TabIndex = 2;
+            this.hd_dgvHoaDon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.hd_dgvHoaDon_CellClick);
             // 
             // hd_lbMaHoaDon
             // 
@@ -281,7 +254,7 @@ namespace CuoiKi_QuanLyQuanAnNhanh
             this.hd_lbMaHoaDon.Name = "hd_lbMaHoaDon";
             this.hd_lbMaHoaDon.Size = new System.Drawing.Size(300, 17);
             this.hd_lbMaHoaDon.TabIndex = 0;
-            this.hd_lbMaHoaDon.Text = "Mã Order: 122125";
+            this.hd_lbMaHoaDon.Text = "Mã Hóa Đơn: 122125";
             // 
             // flpnOrder
             // 
@@ -318,6 +291,22 @@ namespace CuoiKi_QuanLyQuanAnNhanh
             this.panel3.Size = new System.Drawing.Size(783, 84);
             this.panel3.TabIndex = 3;
             // 
+            // ba_txtTenBan
+            // 
+            this.ba_txtTenBan.Location = new System.Drawing.Point(101, 27);
+            this.ba_txtTenBan.Name = "ba_txtTenBan";
+            this.ba_txtTenBan.Size = new System.Drawing.Size(264, 23);
+            this.ba_txtTenBan.TabIndex = 5;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 30);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(83, 17);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Tên Bàn Ăn:";
+            // 
             // ba_btnXoaBan
             // 
             this.ba_btnXoaBan.Location = new System.Drawing.Point(548, 23);
@@ -341,6 +330,7 @@ namespace CuoiKi_QuanLyQuanAnNhanh
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.ba_lbTongTien);
             this.panel2.Controls.Add(this.label24);
             this.panel2.Controls.Add(this.ba_btnThanhToan);
             this.panel2.Controls.Add(this.ba_btnChinhSua);
@@ -386,7 +376,7 @@ namespace CuoiKi_QuanLyQuanAnNhanh
             this.dgvSoDoOrder.Name = "dgvSoDoOrder";
             this.dgvSoDoOrder.RowHeadersWidth = 51;
             this.dgvSoDoOrder.RowTemplate.Height = 24;
-            this.dgvSoDoOrder.Size = new System.Drawing.Size(403, 447);
+            this.dgvSoDoOrder.Size = new System.Drawing.Size(403, 368);
             this.dgvSoDoOrder.TabIndex = 1;
             // 
             // sd_lbHeader
@@ -441,6 +431,17 @@ namespace CuoiKi_QuanLyQuanAnNhanh
             this.panel4.Size = new System.Drawing.Size(346, 587);
             this.panel4.TabIndex = 1;
             // 
+            // ma_cbxDonVi
+            // 
+            this.ma_cbxDonVi.FormattingEnabled = true;
+            this.ma_cbxDonVi.Items.AddRange(new object[] {
+            "VND",
+            "USD"});
+            this.ma_cbxDonVi.Location = new System.Drawing.Point(142, 152);
+            this.ma_cbxDonVi.Name = "ma_cbxDonVi";
+            this.ma_cbxDonVi.Size = new System.Drawing.Size(186, 24);
+            this.ma_cbxDonVi.TabIndex = 7;
+            // 
             // label23
             // 
             this.label23.AutoSize = true;
@@ -466,6 +467,7 @@ namespace CuoiKi_QuanLyQuanAnNhanh
             this.ma_btnXoaMon.TabIndex = 4;
             this.ma_btnXoaMon.Text = "Xoa Mon";
             this.ma_btnXoaMon.UseVisualStyleBackColor = true;
+            this.ma_btnXoaMon.Click += new System.EventHandler(this.ma_btnXoaMon_Click);
             // 
             // ma_btnCapNhat
             // 
@@ -485,6 +487,7 @@ namespace CuoiKi_QuanLyQuanAnNhanh
             this.ma_btnThemMon.TabIndex = 4;
             this.ma_btnThemMon.Text = "Them Mon";
             this.ma_btnThemMon.UseVisualStyleBackColor = true;
+            this.ma_btnThemMon.Click += new System.EventHandler(this.ma_btnThemMon_Click);
             // 
             // ma_btnThemHinh
             // 
@@ -867,8 +870,8 @@ namespace CuoiKi_QuanLyQuanAnNhanh
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.White;
+            this.panel5.Controls.Add(this.flpnNhanVien);
             this.panel5.Controls.Add(this.label26);
-            this.panel5.Controls.Add(this.dataGridView3);
             this.panel5.Controls.Add(this.label8);
             this.panel5.Location = new System.Drawing.Point(6, 6);
             this.panel5.Name = "panel5";
@@ -882,16 +885,6 @@ namespace CuoiKi_QuanLyQuanAnNhanh
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(808, 2);
             this.label26.TabIndex = 5;
-            // 
-            // dataGridView3
-            // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(22, 49);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.RowHeadersWidth = 51;
-            this.dataGridView3.RowTemplate.Height = 24;
-            this.dataGridView3.Size = new System.Drawing.Size(801, 524);
-            this.dataGridView3.TabIndex = 1;
             // 
             // label8
             // 
@@ -912,32 +905,21 @@ namespace CuoiKi_QuanLyQuanAnNhanh
             this.tabPage5.Text = "Thong Ke";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // ma_cbxDonVi
+            // ba_lbTongTien
             // 
-            this.ma_cbxDonVi.FormattingEnabled = true;
-            this.ma_cbxDonVi.Items.AddRange(new object[] {
-            "VND",
-            "USD"});
-            this.ma_cbxDonVi.Location = new System.Drawing.Point(142, 152);
-            this.ma_cbxDonVi.Name = "ma_cbxDonVi";
-            this.ma_cbxDonVi.Size = new System.Drawing.Size(186, 24);
-            this.ma_cbxDonVi.TabIndex = 7;
+            this.ba_lbTongTien.AutoSize = true;
+            this.ba_lbTongTien.Location = new System.Drawing.Point(13, 449);
+            this.ba_lbTongTien.Name = "ba_lbTongTien";
+            this.ba_lbTongTien.Size = new System.Drawing.Size(42, 17);
+            this.ba_lbTongTien.TabIndex = 7;
+            this.ba_lbTongTien.Text = "label2";
             // 
-            // label3
+            // flpnNhanVien
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 30);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(83, 17);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Tên Bàn Ăn:";
-            // 
-            // ba_txtTenBan
-            // 
-            this.ba_txtTenBan.Location = new System.Drawing.Point(101, 27);
-            this.ba_txtTenBan.Name = "ba_txtTenBan";
-            this.ba_txtTenBan.Size = new System.Drawing.Size(264, 23);
-            this.ba_txtTenBan.TabIndex = 5;
+            this.flpnNhanVien.Location = new System.Drawing.Point(12, 52);
+            this.flpnNhanVien.Name = "flpnNhanVien";
+            this.flpnNhanVien.Size = new System.Drawing.Size(815, 521);
+            this.flpnNhanVien.TabIndex = 6;
             // 
             // frmMain
             // 
@@ -954,8 +936,7 @@ namespace CuoiKi_QuanLyQuanAnNhanh
             this.tabControl.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hd_dgvHoaDon)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -971,7 +952,6 @@ namespace CuoiKi_QuanLyQuanAnNhanh
             this.panel6.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -985,20 +965,16 @@ namespace CuoiKi_QuanLyQuanAnNhanh
         private System.Windows.Forms.FlowLayoutPanel flpnTable;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label hd_lbMaHoaDon;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Label hd_lbBanAn;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button hd_btnHuyBo;
+        private System.Windows.Forms.Button hd_btnThanhToan;
+        private System.Windows.Forms.Label hd_lbTongTien;
+        private System.Windows.Forms.DataGridView hd_dgvHoaDon;
+        private System.Windows.Forms.Label hd_lbThongTinHoaDon;
+        private System.Windows.Forms.Button hd_btnXoaMon;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button ba_btnChinhSua;
         private System.Windows.Forms.DataGridView dgvSoDoOrder;
         private System.Windows.Forms.Label sd_lbHeader;
-        private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button ba_btnXoaBan;
         private System.Windows.Forms.Button ba_btnThemBan;
@@ -1006,7 +982,6 @@ namespace CuoiKi_QuanLyQuanAnNhanh
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.TabPage tabPage5;
-        private System.Windows.Forms.Button button13;
         private System.Windows.Forms.FlowLayoutPanel flpnMonAn;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button ma_btnXoaMon;
@@ -1033,7 +1008,6 @@ namespace CuoiKi_QuanLyQuanAnNhanh
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button button20;
@@ -1061,6 +1035,10 @@ namespace CuoiKi_QuanLyQuanAnNhanh
         private System.Windows.Forms.ComboBox ma_cbxDonVi;
         private System.Windows.Forms.TextBox ba_txtTenBan;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button hd_btnLuu;
+        private System.Windows.Forms.Button hd_btnGiam;
+        private System.Windows.Forms.Label ba_lbTongTien;
+        private System.Windows.Forms.FlowLayoutPanel flpnNhanVien;
     }
 }
 
