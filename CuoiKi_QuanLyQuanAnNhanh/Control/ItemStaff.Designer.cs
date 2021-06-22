@@ -1,7 +1,7 @@
 ﻿
 namespace CuoiKi_QuanLyQuanAnNhanh.Control
 {
-    partial class IteamStaff
+    partial class ItemStaff
     {
         /// <summary> 
         /// Required designer variable.
@@ -39,9 +39,11 @@ namespace CuoiKi_QuanLyQuanAnNhanh.Control
             // 
             this.pbxAnh.Location = new System.Drawing.Point(0, 0);
             this.pbxAnh.Name = "pbxAnh";
-            this.pbxAnh.Size = new System.Drawing.Size(230, 184);
+            this.pbxAnh.Size = new System.Drawing.Size(229, 184);
+            this.pbxAnh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxAnh.TabIndex = 0;
             this.pbxAnh.TabStop = false;
+            this.pbxAnh.Click += new System.EventHandler(this.pbxAnh_Click);
             // 
             // lbTen
             // 
@@ -63,16 +65,17 @@ namespace CuoiKi_QuanLyQuanAnNhanh.Control
             this.lbChucVu.Text = "Nhan Vien";
             this.lbChucVu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // UserControl1
+            // ItemStaff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.lbChucVu);
             this.Controls.Add(this.lbTen);
             this.Controls.Add(this.pbxAnh);
             this.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Name = "UserControl1";
-            this.Size = new System.Drawing.Size(230, 251);
+            this.Name = "ItemStaff";
+            this.Size = new System.Drawing.Size(228, 249);
             ((System.ComponentModel.ISupportInitialize)(this.pbxAnh)).EndInit();
             this.ResumeLayout(false);
 

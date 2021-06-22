@@ -65,13 +65,25 @@
     <Compile Include="Control\ItemTable.Designer.cs">
       <DependentUpon>ItemTable.cs</DependentUpon>
     </Compile>
-    <Compile Include="Control\IteamStaff.cs">
+    <Compile Include="Control\ItemStaff.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Control\IteamStaff.Designer.cs">
-      <DependentUpon>IteamStaff.cs</DependentUpon>
+    <Compile Include="Control\ItemStaff.Designer.cs">
+      <DependentUpon>ItemStaff.cs</DependentUpon>
     </Compile>
     <Compile Include="DataAccess\SqlHelper.cs" />
+    <Compile Include="frmTaoNV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTaoNV.Designer.cs">
+      <DependentUpon>frmTaoNV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmThongTin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThongTin.Designer.cs">
+      <DependentUpon>frmThongTin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,8 +98,14 @@
     <EmbeddedResource Include="Control\ItemTable.resx">
       <DependentUpon>ItemTable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Control\IteamStaff.resx">
-      <DependentUpon>IteamStaff.cs</DependentUpon>
+    <EmbeddedResource Include="Control\ItemStaff.resx">
+      <DependentUpon>ItemStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTaoNV.resx">
+      <DependentUpon>frmTaoNV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmThongTin.resx">
+      <DependentUpon>frmThongTin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>

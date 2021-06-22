@@ -33,12 +33,7 @@ namespace CuoiKi_QuanLyQuanAnNhanh
                 Application.Exit();
             }
 
-            //Foods = new List<ItemFood>();
-            //Tables = new List<ItemTable>();
-
-            InitTabMonAn();
             InitOrderTab();
-            InitTabBanAn();
 
             currentOrderID = HoaDon.LayMaHoaDon();
             hd_lbMaHoaDon.Text = "Mã Hóa Đơn: " + currentOrderID;
@@ -49,6 +44,7 @@ namespace CuoiKi_QuanLyQuanAnNhanh
             InitOrderTab();
             InitTabBanAn();
             InitTabMonAn();
+            InitTabNhanVien();
         }
 
         #region Tab BanAn
@@ -278,11 +274,69 @@ namespace CuoiKi_QuanLyQuanAnNhanh
         #region Tab NhanVien
         private void InitTabNhanVien()
         {
+            DataTable nhanVienTable = NhanVien.Load();
+            DataRow chucVu;
+            DataTable chucVuTable;
+            string chucvu, tk, mk;
+
+            flpnNhanVien.Controls.Clear();
+
+            foreach (DataRow cell in nhanVienTable.Rows)
+            {
+                chucVuTable = NhanVien.LayTaiKhoanChucVu(cell[0].ToString());
+                if (chucVuTable.Rows.Count == 0)
+                {
+                    chucvu = "Staff";
+                    tk = "";
+                    mk = "";
+                }
+                else 
+                {
+                    chucVu = NhanVien.LayTaiKhoanChucVu(cell[0].ToString()).Rows[0];
+                    chucvu = chucVu[0].ToString();
+                    tk = chucVu[1].ToString();
+                    mk = chucVu[2].ToString();
+                }
+
+                ItemStaff itemStaff = new ItemStaff()
+                {
+                    MaNhanVien = cell[0].ToString(),
+                    Ten = cell[1].ToString(),
+                    NgaySinh = cell[2].ToString(),
+                    SoDienThoai = cell[3].ToString(),
+                    GioiTinh = cell[4].ToString(),
+                    Luong = cell[5].ToString(),
+                    HinhAnh = (byte[])cell[6],
+                    DiaChi = cell[7].ToString(),
+                    ChucVu = chucvu,
+                    TaiKhoan = tk,
+                    MatKhau = mk
+                };
+
+                itemStaff.ItemClick += ItemStaff_ItemClick;
+                flpnNhanVien.Controls.Add(itemStaff);
+            }
 
         }
 
+        private void ItemStaff_ItemClick(object sender, EventArgs e)
+        {
+            ItemStaff itemStaff = (ItemStaff)sender;
+            frmThongTin frmtt = new frmThongTin(itemStaff.MaNhanVien, itemStaff.Ten, itemStaff.NgaySinh, itemStaff.SoDienThoai,
+                itemStaff.GioiTinh, itemStaff.Luong, itemStaff.HinhAnh, itemStaff.DiaChi, itemStaff.ChucVu, itemStaff.TaiKhoan, itemStaff.MatKhau);
 
+            frmtt.ShowDialog();
+            InitTabNhanVien();
+        }
+
+        private void nv_btnThemNV_Click(object sender, EventArgs e)
+        {
+            frmTaoNV taonv = new frmTaoNV();
+            taonv.ShowDialog();
+            InitTabNhanVien();
+        }
         #endregion
+
 
     }
 }

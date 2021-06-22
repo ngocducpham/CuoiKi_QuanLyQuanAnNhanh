@@ -49,6 +49,7 @@ namespace CuoiKi_QuanLyQuanAnNhanh
             this.ba_btnXoaBan = new System.Windows.Forms.Button();
             this.ba_btnThemBan = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.ba_lbTongTien = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.ba_btnThanhToan = new System.Windows.Forms.Button();
             this.ba_btnChinhSua = new System.Windows.Forms.Button();
@@ -73,43 +74,12 @@ namespace CuoiKi_QuanLyQuanAnNhanh
             this.label4 = new System.Windows.Forms.Label();
             this.flpnMonAn = new System.Windows.Forms.FlowLayoutPanel();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.button23 = new System.Windows.Forms.Button();
-            this.button19 = new System.Windows.Forms.Button();
-            this.button22 = new System.Windows.Forms.Button();
-            this.button20 = new System.Windows.Forms.Button();
-            this.button21 = new System.Windows.Forms.Button();
-            this.button18 = new System.Windows.Forms.Button();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.flpnNhanVien = new System.Windows.Forms.FlowLayoutPanel();
             this.label26 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.ba_lbTongTien = new System.Windows.Forms.Label();
-            this.flpnNhanVien = new System.Windows.Forms.FlowLayoutPanel();
+            this.nv_btnThemNV = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -122,7 +92,6 @@ namespace CuoiKi_QuanLyQuanAnNhanh
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ma_pbxHinhAnh)).BeginInit();
             this.tabPage4.SuspendLayout();
-            this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -341,6 +310,15 @@ namespace CuoiKi_QuanLyQuanAnNhanh
             this.panel2.Size = new System.Drawing.Size(433, 587);
             this.panel2.TabIndex = 2;
             // 
+            // ba_lbTongTien
+            // 
+            this.ba_lbTongTien.AutoSize = true;
+            this.ba_lbTongTien.Location = new System.Drawing.Point(13, 449);
+            this.ba_lbTongTien.Name = "ba_lbTongTien";
+            this.ba_lbTongTien.Size = new System.Drawing.Size(42, 17);
+            this.ba_lbTongTien.TabIndex = 7;
+            this.ba_lbTongTien.Text = "label2";
+            // 
             // label24
             // 
             this.label24.BackColor = System.Drawing.Color.DeepSkyBlue;
@@ -495,7 +473,7 @@ namespace CuoiKi_QuanLyQuanAnNhanh
             this.ma_btnThemHinh.Name = "ma_btnThemHinh";
             this.ma_btnThemHinh.Size = new System.Drawing.Size(92, 31);
             this.ma_btnThemHinh.TabIndex = 4;
-            this.ma_btnThemHinh.Text = "Them Hinh";
+            this.ma_btnThemHinh.Text = "Thêm Hình";
             this.ma_btnThemHinh.UseVisualStyleBackColor = true;
             this.ma_btnThemHinh.Click += new System.EventHandler(this.ma_btnThemHinh_Click);
             // 
@@ -572,7 +550,6 @@ namespace CuoiKi_QuanLyQuanAnNhanh
             // tabPage4
             // 
             this.tabPage4.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage4.Controls.Add(this.panel6);
             this.tabPage4.Controls.Add(this.panel5);
             this.tabPage4.Location = new System.Drawing.Point(4, 25);
             this.tabPage4.Name = "tabPage4";
@@ -581,315 +558,38 @@ namespace CuoiKi_QuanLyQuanAnNhanh
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Nhan Vien";
             // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.White;
-            this.panel6.Controls.Add(this.label21);
-            this.panel6.Controls.Add(this.label19);
-            this.panel6.Controls.Add(this.label14);
-            this.panel6.Controls.Add(this.button23);
-            this.panel6.Controls.Add(this.button19);
-            this.panel6.Controls.Add(this.button22);
-            this.panel6.Controls.Add(this.button20);
-            this.panel6.Controls.Add(this.button21);
-            this.panel6.Controls.Add(this.button18);
-            this.panel6.Controls.Add(this.textBox8);
-            this.panel6.Controls.Add(this.textBox7);
-            this.panel6.Controls.Add(this.label13);
-            this.panel6.Controls.Add(this.textBox6);
-            this.panel6.Controls.Add(this.label12);
-            this.panel6.Controls.Add(this.textBox5);
-            this.panel6.Controls.Add(this.label11);
-            this.panel6.Controls.Add(this.textBox4);
-            this.panel6.Controls.Add(this.label10);
-            this.panel6.Controls.Add(this.textBox10);
-            this.panel6.Controls.Add(this.label17);
-            this.panel6.Controls.Add(this.textBox9);
-            this.panel6.Controls.Add(this.label16);
-            this.panel6.Controls.Add(this.textBox13);
-            this.panel6.Controls.Add(this.textBox12);
-            this.panel6.Controls.Add(this.textBox3);
-            this.panel6.Controls.Add(this.label28);
-            this.panel6.Controls.Add(this.label20);
-            this.panel6.Controls.Add(this.label27);
-            this.panel6.Controls.Add(this.label18);
-            this.panel6.Controls.Add(this.label9);
-            this.panel6.Location = new System.Drawing.Point(853, 6);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(375, 589);
-            this.panel6.TabIndex = 1;
-            // 
-            // label21
-            // 
-            this.label21.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.label21.Location = new System.Drawing.Point(15, 398);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(347, 2);
-            this.label21.TabIndex = 4;
-            // 
-            // label19
-            // 
-            this.label19.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.label19.Location = new System.Drawing.Point(16, 33);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(347, 2);
-            this.label19.TabIndex = 4;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(17, 249);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(60, 17);
-            this.label14.TabIndex = 3;
-            this.label14.Text = "Chuc Vu";
-            // 
-            // button23
-            // 
-            this.button23.Location = new System.Drawing.Point(75, 544);
-            this.button23.Name = "button23";
-            this.button23.Size = new System.Drawing.Size(92, 29);
-            this.button23.TabIndex = 2;
-            this.button23.Text = "Xoa";
-            this.button23.UseVisualStyleBackColor = true;
-            // 
-            // button19
-            // 
-            this.button19.Location = new System.Drawing.Point(77, 327);
-            this.button19.Name = "button19";
-            this.button19.Size = new System.Drawing.Size(92, 29);
-            this.button19.TabIndex = 2;
-            this.button19.Text = "Xoa";
-            this.button19.UseVisualStyleBackColor = true;
-            // 
-            // button22
-            // 
-            this.button22.Location = new System.Drawing.Point(173, 544);
-            this.button22.Name = "button22";
-            this.button22.Size = new System.Drawing.Size(92, 29);
-            this.button22.TabIndex = 2;
-            this.button22.Text = "Sua";
-            this.button22.UseVisualStyleBackColor = true;
-            // 
-            // button20
-            // 
-            this.button20.Location = new System.Drawing.Point(175, 327);
-            this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(92, 29);
-            this.button20.TabIndex = 2;
-            this.button20.Text = "Sua";
-            this.button20.UseVisualStyleBackColor = true;
-            // 
-            // button21
-            // 
-            this.button21.Location = new System.Drawing.Point(271, 544);
-            this.button21.Name = "button21";
-            this.button21.Size = new System.Drawing.Size(92, 29);
-            this.button21.TabIndex = 2;
-            this.button21.Text = "Them";
-            this.button21.UseVisualStyleBackColor = true;
-            // 
-            // button18
-            // 
-            this.button18.Location = new System.Drawing.Point(273, 327);
-            this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(92, 29);
-            this.button18.TabIndex = 2;
-            this.button18.Text = "Them";
-            this.button18.UseVisualStyleBackColor = true;
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(133, 249);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(232, 23);
-            this.textBox8.TabIndex = 1;
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(133, 289);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(232, 23);
-            this.textBox7.TabIndex = 1;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(17, 292);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(47, 17);
-            this.label13.TabIndex = 0;
-            this.label13.Text = "Luong";
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(133, 207);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(232, 23);
-            this.textBox6.TabIndex = 1;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(17, 210);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(59, 17);
-            this.label12.TabIndex = 0;
-            this.label12.Text = "Gioi Tinh";
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(133, 168);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(232, 23);
-            this.textBox5.TabIndex = 1;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(17, 171);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(92, 17);
-            this.label11.TabIndex = 0;
-            this.label11.Text = "So Dien Thoai";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(133, 127);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(232, 23);
-            this.textBox4.TabIndex = 1;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(17, 130);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(50, 17);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "Dia Chi";
-            // 
-            // textBox10
-            // 
-            this.textBox10.Location = new System.Drawing.Point(133, 503);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(232, 23);
-            this.textBox10.TabIndex = 1;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(19, 506);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(65, 17);
-            this.label17.TabIndex = 0;
-            this.label17.Text = "Mat Khau";
-            // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(133, 461);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(232, 23);
-            this.textBox9.TabIndex = 1;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(17, 464);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(95, 17);
-            this.label16.TabIndex = 0;
-            this.label16.Text = "Ten Tai Khoan";
-            // 
-            // textBox13
-            // 
-            this.textBox13.Location = new System.Drawing.Point(133, 422);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(232, 23);
-            this.textBox13.TabIndex = 1;
-            // 
-            // textBox12
-            // 
-            this.textBox12.Location = new System.Drawing.Point(133, 49);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(232, 23);
-            this.textBox12.TabIndex = 1;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(133, 88);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(232, 23);
-            this.textBox3.TabIndex = 1;
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(19, 422);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(90, 17);
-            this.label28.TabIndex = 0;
-            this.label28.Text = "Ma Nhan Vien";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(15, 378);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(133, 17);
-            this.label20.TabIndex = 0;
-            this.label20.Text = "Tai Khoan Nhan Vien";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(19, 52);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(90, 17);
-            this.label27.TabIndex = 0;
-            this.label27.Text = "Ma Nhan Vien";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(16, 13);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(135, 17);
-            this.label18.TabIndex = 0;
-            this.label18.Text = "Thong Tin Nhan Vien";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(19, 91);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(96, 17);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "Ten Nhan Vien";
-            // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.White;
+            this.panel5.Controls.Add(this.nv_btnThemNV);
             this.panel5.Controls.Add(this.flpnNhanVien);
             this.panel5.Controls.Add(this.label26);
             this.panel5.Controls.Add(this.label8);
             this.panel5.Location = new System.Drawing.Point(6, 6);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(841, 589);
+            this.panel5.Size = new System.Drawing.Size(1222, 589);
             this.panel5.TabIndex = 0;
+            // 
+            // flpnNhanVien
+            // 
+            this.flpnNhanVien.AutoScroll = true;
+            this.flpnNhanVien.Location = new System.Drawing.Point(12, 52);
+            this.flpnNhanVien.Name = "flpnNhanVien";
+            this.flpnNhanVien.Size = new System.Drawing.Size(1195, 483);
+            this.flpnNhanVien.TabIndex = 6;
             // 
             // label26
             // 
             this.label26.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.label26.Location = new System.Drawing.Point(19, 33);
+            this.label26.Location = new System.Drawing.Point(10, 33);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(808, 2);
+            this.label26.Size = new System.Drawing.Size(1195, 2);
             this.label26.TabIndex = 5;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(19, 13);
+            this.label8.Location = new System.Drawing.Point(9, 16);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(140, 17);
             this.label8.TabIndex = 0;
@@ -905,28 +605,22 @@ namespace CuoiKi_QuanLyQuanAnNhanh
             this.tabPage5.Text = "Thong Ke";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // ba_lbTongTien
+            // nv_btnThemNV
             // 
-            this.ba_lbTongTien.AutoSize = true;
-            this.ba_lbTongTien.Location = new System.Drawing.Point(13, 449);
-            this.ba_lbTongTien.Name = "ba_lbTongTien";
-            this.ba_lbTongTien.Size = new System.Drawing.Size(42, 17);
-            this.ba_lbTongTien.TabIndex = 7;
-            this.ba_lbTongTien.Text = "label2";
-            // 
-            // flpnNhanVien
-            // 
-            this.flpnNhanVien.Location = new System.Drawing.Point(12, 52);
-            this.flpnNhanVien.Name = "flpnNhanVien";
-            this.flpnNhanVien.Size = new System.Drawing.Size(815, 521);
-            this.flpnNhanVien.TabIndex = 6;
+            this.nv_btnThemNV.Location = new System.Drawing.Point(1048, 541);
+            this.nv_btnThemNV.Name = "nv_btnThemNV";
+            this.nv_btnThemNV.Size = new System.Drawing.Size(159, 32);
+            this.nv_btnThemNV.TabIndex = 7;
+            this.nv_btnThemNV.Text = "Thêm Nhân Viên";
+            this.nv_btnThemNV.UseVisualStyleBackColor = true;
+            this.nv_btnThemNV.Click += new System.EventHandler(this.nv_btnThemNV_Click);
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1266, 736);
+            this.ClientSize = new System.Drawing.Size(1266, 658);
             this.Controls.Add(this.tabControl);
             this.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "frmMain";
@@ -948,8 +642,6 @@ namespace CuoiKi_QuanLyQuanAnNhanh
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ma_pbxHinhAnh)).EndInit();
             this.tabPage4.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.ResumeLayout(false);
@@ -994,44 +686,13 @@ namespace CuoiKi_QuanLyQuanAnNhanh
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox ma_txtTenMonAn;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Button button19;
-        private System.Windows.Forms.Button button18;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Button button20;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.Button button23;
-        private System.Windows.Forms.Button button22;
-        private System.Windows.Forms.Button button21;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Label label27;
         private System.Windows.Forms.ComboBox ma_cbxDonVi;
         private System.Windows.Forms.TextBox ba_txtTenBan;
         private System.Windows.Forms.Label label3;
@@ -1039,6 +700,7 @@ namespace CuoiKi_QuanLyQuanAnNhanh
         private System.Windows.Forms.Button hd_btnGiam;
         private System.Windows.Forms.Label ba_lbTongTien;
         private System.Windows.Forms.FlowLayoutPanel flpnNhanVien;
+        private System.Windows.Forms.Button nv_btnThemNV;
     }
 }
 
