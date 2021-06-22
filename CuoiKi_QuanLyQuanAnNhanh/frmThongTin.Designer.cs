@@ -29,7 +29,6 @@ namespace CuoiKi_QuanLyQuanAnNhanh
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmThongTin));
             this.panel6 = new System.Windows.Forms.Panel();
             this.rbtNu = new System.Windows.Forms.RadioButton();
             this.rbtNam = new System.Windows.Forms.RadioButton();
@@ -347,7 +346,6 @@ namespace CuoiKi_QuanLyQuanAnNhanh
             // 
             // pbxNhanVien
             // 
-            this.pbxNhanVien.Image = ((System.Drawing.Image)(resources.GetObject("pbxNhanVien.Image")));
             this.pbxNhanVien.Location = new System.Drawing.Point(11, 23);
             this.pbxNhanVien.Name = "pbxNhanVien";
             this.pbxNhanVien.Size = new System.Drawing.Size(262, 317);
